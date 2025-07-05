@@ -98,6 +98,21 @@
     "a step fails",
     "a step does not exist"
   ],
+  "findStepDefinitionBy" : [
+    [ ],
+    [
+      "1"
+    ],
+    [ ],
+    [ ],
+    [
+      "2"
+    ],
+    [ ],
+    [ ],
+    [ ],
+    [ ]
+  ],
   "findTestCaseBy" : [
     "20",
     "24",

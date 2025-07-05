@@ -9,6 +9,7 @@ import io.cucumber.messages.types.Hook;
 import io.cucumber.messages.types.Pickle;
 import io.cucumber.messages.types.PickleStep;
 import io.cucumber.messages.types.Step;
+import io.cucumber.messages.types.StepDefinition;
 import io.cucumber.messages.types.TestCaseFinished;
 import io.cucumber.messages.types.TestCaseStarted;
 import io.cucumber.messages.types.TestStep;
@@ -178,6 +179,11 @@ public class QueryAcceptanceTest {
         results.put("findStepBy", query.findAllPickleSteps().stream()
                 .map(query::findStepBy)
                 .map(step -> step.map(Step::getText))
+                .collect(toList()));
+        results.put("findStepDefinitionBy", query.findAllTestSteps().stream()
+                .map(query::findStepDefinitionBy)
+                .map(stepDefinitions -> stepDefinitions.stream().map(StepDefinition::getId)
+                        .collect(toList()))
                 .collect(toList()));
         results.put("findTestCaseBy", query.findAllTestCaseStarted().stream()
                 .map(query::findTestCaseBy)
